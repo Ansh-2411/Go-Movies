@@ -10,32 +10,33 @@ const auth = firebase.auth();
 const db = firebase.firestore();
 
 
-submit.addEventListener('click',()=>{
-    email =email;
-    password =password;
+submit.addEventListener('click', () => {
+    email = email;
+    password = password;
     console.log(email)
     console.log(password)
     auth.createUserWithEmailAndPassword(email, password)
-    .then(async (user) => {
-        // Signed in 
-        var uid = user.user.uid;
-        // add user detail in database
-        await db.collection("users").doc(uid).set({
-            username: username,
-            email: email,
-        })
-        console.log("OK registered" )
-        await user.user.sendEmailVerification()
-        console.log("sent")
+        .then(async (user) => {
+            // Signed in 
+            var uid = user.user.uid;
+            // add user detail in database
+            await db.collection("users").doc(uid).set({
+                username: username,
+                email: email,
+            })
+            console.log("OK registered")
+            alert("registered....click OK")
+            await user.user.sendEmailVerification()
+            console.log("sent")
 
-        window.location.replace("verification.html");
-        console.log(uid)
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorMessage)
-    });
+            window.location.replace("verification.html");
+            console.log(uid)
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage)
+        });
 
 })
 
@@ -65,7 +66,7 @@ function showDone(tag, i, controllerd) {
 function validateUsername(tag) {
     tag.addEventListener("input", function () {
         username = this.value;
-        if (username.length <= 4) {
+        if (username.length <= 3) {
             showError(tag, 0, "Username must be at least 4 characters long.", 'isusername')
 
         } else if (!/^[a-zA-Z0-9]+$/.test(username)) {

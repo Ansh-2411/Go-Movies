@@ -1,3 +1,68 @@
+var menu = document.getElementById('menu');
+var closemenu = document.getElementById('closemenu');
+var menucontent = document.getElementById('menucontent');
+var movie = document.getElementById('movie')
+var movie2 = document.getElementById('movie2')
+var signup = document.getElementById('signup')
+
+menu.addEventListener("click", () => {
+
+    menucontent.style.display = "flex";
+
+})
+signup.addEventListener("click", () => {
+
+    alert("Registering please wait.... click OK")
+
+
+});
+
+
+
+closemenu.addEventListener("click", () => {
+    menucontent.style.display = "none";
+
+})
+
+function updateMobileNav() {
+    menucontent.style.display = "none";
+
+}
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+
+function activeLink() {
+    lists.forEach((item) => {
+
+
+        item.id = ""
+        this.id = "active"
+    })
+}
+let section = document.querySelectorAll('section')
+let lists = document.querySelectorAll('.linkitem');
+
+lists.forEach((item) =>
+    item.addEventListener('click', activeLink));
+
 // Api for movies[Not working]
 
 // const options = {
@@ -99,7 +164,7 @@
 //       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MDM2NTQxYTE5M2FiYTdhMzEyMzEyN2U0YmUyNjhmNiIsInN1YiI6IjY0N2YzY2U0MGZiMzk4MDBjMTI5YzMxNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.pYG5wJ5Yph8CByPKGWTTIkPPBoMLYxHXKNA5vrfj5-I'
 //     }
 //   };
-  
+
 //   fetch(" https://www.episodate.com/api/most-popular?page=1")
 //     .then(response => response.json())
 //     .then(response => console.log(response))
@@ -115,7 +180,7 @@ fetch("data.json")
         for (let index = 0; index < response.animes.length; index++) {
             // console.log("Name :- ",response.animes[index].title)
             anime.innerHTML += `
-            <a href="${response.animes[index].id}" >
+            <a href="${response.animes[index].url}" >
             <img src="${response.animes[index].main_picture.large}" alt="">
             </a>
 `
@@ -130,30 +195,30 @@ fetch("data.json")
 
 // Movie
 
-    var movie=document.getElementById("movie")
+var movie = document.getElementById("movie")
 fetch("data.json")
     .then(response => response.json())
     .then(response => {
         for (let index = 0; index < response.movies.length; index++) {
             // console.log("Name :- ",response.movies[index].title)
             movie.innerHTML += `
-           
+            <a href="${response.movies[index].type}" >
         <img src="${response.movies[index].imageurl}" alt="">
-        
+        </a>
 
 `
         }
     })
-    var movie2=document.getElementById("movie2")
+var movie2 = document.getElementById("movie2")
 fetch("data.json")
     .then(response => response.json())
     .then(response => {
         for (let index = 0; index < response.movies2.length; index++) {
             // console.log("Name :- ",response.movies[index].title)
             movie2.innerHTML += `
-           
+            <a href="${response.movies2[index].url}" >
         <img src="${response.movies2[index].image}" alt="">
-        
+        </a>
 
 `
         }
@@ -162,7 +227,7 @@ fetch("data.json")
 
 // series
 
-var series=document.getElementById("series")
+var series = document.getElementById("series")
 fetch("data.json")
     .then(response => response.json())
     .then(response => {
@@ -176,7 +241,7 @@ fetch("data.json")
 `
         }
     })
-var series2=document.getElementById("series2")
+var series2 = document.getElementById("series2")
 fetch("data.json")
     .then(response => response.json())
     .then(response => {
@@ -190,22 +255,22 @@ fetch("data.json")
 `
         }
     })
-    
-    // cartoon
-    
-    
-    var cartoon=document.getElementById("cartoon")
-    fetch("data.json")
-        .then(response => response.json())
-        .then(response => {
-            for (let index = 0; index < response.cartoon.length; index++) {
-                // console.log("Name :- ",response.series2[index].name)
-                cartoon.innerHTML += `
+
+// cartoon
+
+
+var cartoon = document.getElementById("cartoon")
+fetch("data.json")
+    .then(response => response.json())
+    .then(response => {
+        for (let index = 0; index < response.cartoon.length; index++) {
+            // console.log("Name :- ",response.series2[index].name)
+            cartoon.innerHTML += `
              <a href="${response.cartoon[index].link}" > 
             <img src="${response.cartoon[index].img}" alt="">
             </a>  
             
     
     `
-            }
-        })
+        }
+    })

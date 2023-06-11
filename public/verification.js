@@ -8,19 +8,19 @@ setInterval(() => {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             if (user.emailVerified) {
-                // console.log("User's email is verified");
+                alert("your email is verified....click OK");
                 window.location.replace("index.html");
                 console.log("hi")
             } else {
-                console.log("User's email is not verified");
+                alert("your email is not verified....click OK");
                 window.location.replace("index.html");
                 console.log("hii")
             }
         } else {
-            // console.log("User is not signed in");
+            alert("User is not signed in....click OK");
             console.log("hiii")
         }
-    
+
     });
 }, 5000)
 clearInterval(check)

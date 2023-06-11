@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO MOVIES</title>
+    <link rel="icon" href="/Assets/logo.png" type="image/icon type">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .mimages{
+    width: auto;
+    height: 200px;
+    padding: 2px;
+
+        }
+        .mimages img {
+    border-radius: 8px;
+    margin-left: 2px;
+    height: 140px;
+
+}
+.seriespage-section h1{
+    text-align: center;
+    
+}
+.mimages img:hover {
+    z-index: 100000;
+    transform: scale(1.1);
+    overflow: visible;
+}
+    </style>
+</head>
+<body>
+    <section class="seriespage-section">
+        <h1>Web Series</h1>
+        <div id="new_series" class="mimages">
+
+        </div>
+    </section>
+    <script>
+
+
+var series = document.getElementById("new_series")
+fetch("data.json")
+    .then(response => response.json())
+    .then(response => {
+        for (let index = 0; index < response.series.length; index++) {
+            // console.log("Name :- ",response.series[index].name)
+            series.innerHTML += `
+            <a href="${response.series[index].original_language}" >
+        <img src="${response.series[index].poster_path}" alt="">
+        </a>
+
+`
+        }
+    })
+var series2 = document.getElementById("new_series")
+fetch("data.json")
+    .then(response => response.json())
+    .then(response => {
+        for (let index = 0; index < response.series2.length; index++) {
+            // console.log("Name :- ",response.series2[index].name)
+            series2.innerHTML += `
+            <a href="${response.series2[index].country}" > 
+        <img src="${response.series2[index].image_thumbnail_path}" alt="">
+        </a>
+
+`
+        }
+    })
+    </script>
+</body>
+</html>

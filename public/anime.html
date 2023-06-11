@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO MOVIES</title>
+    <link rel="icon" href="/Assets/logo.png" type="image/icon type">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .mimages{
+    width: auto;
+    height: 200px;
+    padding: 2px;
+
+        }
+        .mimages img {
+    border-radius: 8px;
+    margin-left: 2px;
+    height: 140px;
+
+}
+.animepage-section h1{
+    text-align: center;
+    
+}
+.mimages img:hover {
+    z-index: 100000;
+    transform: scale(1.1);
+    overflow: visible;
+}
+    </style>
+</head>
+<body>
+    <section class="animepage-section">
+        <h1>Anime</h1>
+        <div id="new_anime" class="mimages">
+
+        </div>
+    </section>
+    <script>
+
+var anime = document.getElementById("new_anime")
+fetch("data.json")
+    .then(response => response.json())
+    .then(response => {
+        for (let index = 0; index < response.animes.length; index++) {
+            // console.log("Name :- ",response.animes[index].title)
+            anime.innerHTML += `
+            <a href="${response.animes[index].url}" >
+            <img src="${response.animes[index].main_picture.large}" alt="">
+            </a>
+`
+
+
+
+        }
+    })
+
+
+    .catch(err => console.error(err));
+
+    </script>
+</body>
+</html>

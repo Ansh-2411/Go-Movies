@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO MOVIES</title>
+    <link rel="icon" href="/Assets/logo.png" type="image/icon type">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .mimages{
+    width: auto;
+    height: 200px;
+    padding: 2px;
+
+        }
+        .mimages img {
+    border-radius: 8px;
+    margin-left: 2px;
+    height: 140px;
+
+}
+.cartoonpage-section h1{
+    text-align: center;
+    
+}
+.mimages img:hover {
+    z-index: 100000;
+    transform: scale(1.1);
+    overflow: visible;
+}
+    </style>
+</head>
+<body>
+    <section class="cartoonpage-section">
+        <h1>Cartoon</h1>
+        <div id="new_cartoon" class="mimages">
+
+        </div>
+    </section>
+    <script>
+
+var cartoon = document.getElementById("new_cartoon")
+fetch("data.json")
+    .then(response => response.json())
+    .then(response => {
+        for (let index = 0; index < response.cartoon.length; index++) {
+            // console.log("Name :- ",response.cartoons[index].title)
+            cartoon.innerHTML += `
+            <a href="${response.cartoon[index].link}" >
+            <img src="${response.cartoon[index].img}" alt="">
+            </a>
+`
+
+
+
+        }
+    })
+
+
+    .catch(err => console.error(err));
+
+    </script>
+</body>
+</html>
