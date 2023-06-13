@@ -228,17 +228,17 @@
 
 
         </div>
-        <div class="signupform row" id="logindiv">
-            <h2>Login</h2>
-            <div class="inpwrap">
-                <input class="inpstyle" type="email" name="email" id="email" placeholder="Email">
-                <span class="error"> </span>
-            </div>
-            <div class="inpwrap">
-                <input class="inpstyle" type="password" name="password" id="password" placeholder="Password">
-                <span class="error"> </span>
-            </div>
+        <div class="signupform row" id="new_login">
+        <h2>login</h2>
+        <div class="inpwrap" id="logindiv">
+            <input class="inpstyle" type="email" name="signup" id="loginemail" placeholder="Email">
+            <span class="error"> </span>
         </div>
+        <div class="inpwrap">
+            <input class="inpstyle" type="password" name="password" id="loginpassword" placeholder="Password">
+            <span class="error"> </span>
+        </div>
+    </div>
 
         <div class="btnform row animation">
             
@@ -259,6 +259,7 @@
 <script type="module" src="config.js"></script>
 <script type="module" src="signup.js"></script>
 <script type="module" src="login.js"></script>
+<script type="module" src="manage.js"></script>
 <script src="script.js"></script>
 <script>
     var animation= document.getElementById('animation');
@@ -267,7 +268,7 @@
     var signup2= document.getElementById('signup2');
     var login= document.getElementById('login');
     var login2= document.getElementById('login2');
-    var logindiv= document.getElementById('logindiv');
+    var new_login= document.getElementById('new_login');
     var signupdiv= document.getElementById('signupdiv');
    signup.addEventListener("click",() => {
 
@@ -310,7 +311,7 @@ login2.style.display="none";
 login2.addEventListener("click",() => {
 
     signupdiv.style.display="none";
-    logindiv.style.display="flex";
+    new_login.style.display="flex";
     signup.style.display="none";
     signup2.style.display="block";
     login.style.display="block";
@@ -320,7 +321,7 @@ login2.addEventListener("click",() => {
 signup2.addEventListener("click",() => {
 
     signupdiv.style.display="flex";
-    logindiv.style.display="none";
+    new_login.style.display="none";
     signup.style.display="block";
     signup2.style.display="none";
     login.style.display="none";

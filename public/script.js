@@ -10,13 +10,6 @@ menu.addEventListener("click", () => {
     menucontent.style.display = "flex";
 
 })
-signup.addEventListener("click", () => {
-
-    console.log("Registering please wait.... click OK")
-
-
-});
-
 
 
 closemenu.addEventListener("click", () => {

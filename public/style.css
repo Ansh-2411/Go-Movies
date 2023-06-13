@@ -297,9 +297,6 @@ footer {
     background-color: transparent;
     backdrop-filter: blur(7px);
 }
-#logindiv{
-    display: none;
-}
 
 .btnform {
     width: 100%;
@@ -309,13 +306,8 @@ footer {
     gap: 30px;
     flex-wrap: wrap;
 }
-#signup2{
-    display: none;
 
-}
-#login{
-    display: none;
-}
+
 
 .btnform input {
     width: 200px;
@@ -427,10 +419,23 @@ margin-right:10px;
   h2{
 background-color: transparent;
 color: #30D5C8;
+text-align: center;
+  }
+  #new_login{
+    display: none;
   }
 
+#signup2{display: none;}
+#login{display: none;}
 
-
+footer h1{
+    text-align: center;
+    color: #30D5C8;
+}
+footer h6{
+    text-align:center;
+    margin-top: 10px;
+}
 
 
 @media (max-width:900px) {

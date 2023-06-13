@@ -1,15 +1,14 @@
-var email = document.getElementsByTagName("input")[4]
-var password = document.getElementsByTagName("input")[5]
-var submit = document.getElementsByTagName("input")[9]
+var email = document.getElementById("loginemail")
+var password = document.getElementById("loginpassword")
+var submit = document.getElementById("login")
 var error = document.getElementsByClassName("error")
 const ispass = {
     isemail: false,
     ispassword: false
 }
-email=email.value
-password=password.value
-console.log(document.email)
-var email;
+
+
+
 // show error 
 function showError(tag, i, state, controller) {
     tag.style.borderBottomColor = "red";
@@ -47,95 +46,8 @@ function logIn(email) {
                             if (doc.exists) {
                                 const user = doc.data();
                                 var name = user.name;
-//                                 var syllabus = user.syllabus;
-//                                 var semester = user.semester;
-//                                 var branch = user.branch;
-//                                 if (syllabus == "GTU") {
-//                                     if (branch == "it") {
-//                                         if (semester == "1") {
-//                                             window.location.replace("https://khudkibook.web.app/it/sem1/homepage")
-//                                         }
-//                                         else if (semester == "2") {
-//                                             window.location.replace("https://khudkibook.web.app/it/sem2/homepage")
-//                                         }
-//                                         else if (semester == "3") {
-//                                             window.location.replace("https://khudkibook.web.app/it/sem3/homepage")
-//                                         }
-//                                         else if (semester == "4") {
-//                                             window.location.replace("https://khudkibook.web.app/it/sem4/homepage")
-//                                         }
-//                                     }
-//                                     else if (branch == "computer") {
-//                                         if (semester == "1") {
-//                                             window.location.replace("https://khudkibook.web.app/computer/sem1/homepage")
-//                                         }
-//                                         else if (semester == "2") {
-//                                             window.location.replace("https://khudkibook.web.app/computer/sem2/homepage")
-//                                         }
-//                                         else if (semester == "3") {
-//                                             window.location.replace("https://khudkibook.web.app/computer/sem3/homepage")
-//                                         }
-//                                         else if (semester == "4") {
-//                                             window.location.replace("https://khudkibook.web.app/computer/sem4/homepage")
-//                                         }
-//                                     }
-//                                     else if (branch == "electrical") {
-//                                         if (semester == "1") {
-//                                             window.location.replace("https://khudkibook.web.app/electrical/sem1/homepage")
-//                                         }
-//                                         else if (semester == "2") {
-//                                             window.location.replace("https://khudkibook.web.app/electrical/sem2/homepage")
-//                                         }
-//                                         else if (semester == "3") {
-//                                             window.location.replace("https://khudkibook.web.app/electrical/sem3/homepage")
-//                                         }
-//                                         else if (semester == "4") {
-//                                             window.location.replace("https://khudkibook.web.app/electrical/sem4/homepage")
-//                                         }
-//                                     }
-//                                     else if (branch == "mechanical") {
-//                                         if (semester == "1") {
-//                                             window.location.replace("https://khudkibook.web.app/mechanical/sem1/homepage")
-//                                         }
-//                                         else if (semester == "2") {
-//                                             window.location.replace("https://khudkibook.web.app/mechanical/sem2/homepage")
-//                                         }
-//                                         else if (semester == "3") {
-//                                             window.location.replace("https://khudkibook.web.app/mechanical/sem3/homepage")
-//                                         }
-//                                         else if (semester == "4") {
-//                                             window.location.replace("https://khudkibook.web.app/mechanical/sem4/homepage")
-//                                         }
-//                                     }
-//                                     else if (branch == "civil") {
-//                                         if (semester == "1") {
-//                                             window.location.replace("https://khudkibook.web.app/civil/sem1/homepage")
-//                                         }
-//                                         else if (semester == "2") {
-//                                             window.location.replace("https://khudkibook.web.app/civil/sem2/homepage")
-//                                         }
-//                                         else if (semester == "3") {
-//                                             window.location.replace("https://khudkibook.web.app/civil/sem3/homepage")
-//                                         }
-//                                         else if (semester == "4") {
-//                                             window.location.replace("https://khudkibook.web.app/civil/sem4/homepage")
-//                                         }
-//                                     }
-//                                 }
-
-                                var name = document.getElementById("name");
-                                menu.innerHTML += '<button id="signout"> Sign out</button>'
-                                var signuotbtn = document.getElementById("signout");
-                                function signoutf() {
-                                    auth.signOut().then(() => {
-                                        // Sign-out 
-                                        window.location.replace("/signup.html");
-
-                                    }).catch((error) => {
-                                        console.log("Error")
-                                    });
-                                }
-                                signuotbtn.addEventListener("click", signoutf)
+                                alert("You have been loged In ")
+                                window.location.replace("index.html")
 
 
                             } else {
@@ -175,7 +87,7 @@ function validateInputEmailUsername(tag) {
                     .then(querySnapshot => {
                         if (!querySnapshot.empty) {
                             // if the email already exists
-                            showDone(tag, 0, 'isemail')
+                            showDone(tag, 4, 'isemail')
                             // Log in
                             logIn(email)
 
@@ -243,11 +155,5 @@ function validateInputEmailUsername(tag) {
 
     })
 }
-
-
-
-
 // Validate all select option
-
-
 validateInputEmailUsername(email)
