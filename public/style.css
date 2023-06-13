@@ -259,8 +259,7 @@ footer {
     height: 200px;
     background-position: 50%;
     backface-visibility: visible;
-    background-repeat: no-repeat;
-    background-image: url("https://asterasvillas.com/wp-content/uploads/2018/05/footer-background-img.jpg");
+    background-color: black;
 }
 
 .inpstyle {
@@ -298,6 +297,9 @@ footer {
     background-color: transparent;
     backdrop-filter: blur(7px);
 }
+#logindiv{
+    display: none;
+}
 
 .btnform {
     width: 100%;
@@ -306,6 +308,13 @@ footer {
     margin-top: 20px;
     gap: 30px;
     flex-wrap: wrap;
+}
+#signup2{
+    display: none;
+
+}
+#login{
+    display: none;
 }
 
 .btnform input {
@@ -404,6 +413,22 @@ margin-right:10px;
    color: #30D5C8;
    font-size: small;
 }
+.custom-loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: 
+      radial-gradient(farthest-side,#30D5C8 94%,#0000) top/8px 8px no-repeat,
+      conic-gradient(#0000 30%,#30D5C8);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation:s3 1s infinite linear;
+    display: none;
+  }
+  h2{
+background-color: transparent;
+color: #30D5C8;
+  }
+
 
 
 
@@ -456,6 +481,10 @@ margin-right:10px;
     }
 }
 
+  
+  @keyframes s3{ 
+    100%{transform: rotate(1turn)}
+  }
 
 
 /* On smaller screens, decrease text size */

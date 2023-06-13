@@ -146,7 +146,7 @@ function validateInputEmailMobile(tag) {
                 }
             }
             else {
-                showError(tag, 1, "Enter your Email or Mobile Number", 'isnumber')
+                showError(tag, 1, "Enter your Email", 'isnumber')
             }
         }
         else {
@@ -191,7 +191,7 @@ function validatePassword(tag, cp) {
 }
 validateUsername(username)
 validateInputEmailMobile(email)
-// validatesSelect(syllabus, branch, semester)
+
 validatePassword(password, cpassword)
 function send(username, email, pname, syllabus, branch, semester, password, confirmpassword) {
     if (username.value == "") { showError(username, 0, "Username Can't be Empty", 'isusername') } else (showDone(username, 0, 'isusername'));

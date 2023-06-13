@@ -205,7 +205,8 @@
     </section>
     <footer>
      
-        <div class="signupform row">
+        <div class="signupform row" id="signupdiv">
+            <h2>Sign up</h2>
             <div class="inpwrap">
 
                 <input class="inpstyle" type="text" name="username" id="username" placeholder="Username">
@@ -227,10 +228,27 @@
 
 
         </div>
+        <div class="signupform row" id="logindiv">
+            <h2>Login</h2>
+            <div class="inpwrap">
+                <input class="inpstyle" type="email" name="email" id="email" placeholder="Email">
+                <span class="error"> </span>
+            </div>
+            <div class="inpwrap">
+                <input class="inpstyle" type="password" name="password" id="password" placeholder="Password">
+                <span class="error"> </span>
+            </div>
+        </div>
 
-        <div class="btnform row ">
+        <div class="btnform row animation">
+            
+            <input type="submit" value="LOGIN" id="login2"> 
             <input type="submit" value="SIGNUP" id="signup">
-
+            <input type="submit" value="SIGNUP" id="signup2">
+            <input type="submit" value="LOGIN" id="login"> 
+            <div class="custom-loader" id="animation"></div>
+            <div class="custom-loader" id="animation2"></div>
+        
         </div>
         <h6>@ All rights Reserved</h6>
     </footer>
@@ -240,6 +258,75 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
 <script type="module" src="config.js"></script>
 <script type="module" src="signup.js"></script>
+<script type="module" src="login.js"></script>
 <script src="script.js"></script>
+<script>
+    var animation= document.getElementById('animation');
+    var animation2= document.getElementById('animation2');
+    var signup= document.getElementById('signup');
+    var signup2= document.getElementById('signup2');
+    var login= document.getElementById('login');
+    var login2= document.getElementById('login2');
+    var logindiv= document.getElementById('logindiv');
+    var signupdiv= document.getElementById('signupdiv');
+   signup.addEventListener("click",() => {
+
+        animation.style.display="flex";
+        signup.style.display="none";
+        login2.style.display="block";
+login.style.display="none";
+signup2.style.display="none";
+        
+    })
+    animation.addEventListener("click",() => {
+
+animation.style.display="none";
+signup.style.display="block";
+login2.style.display="block";
+login.style.display="none";
+signup2.style.display="none";
+
+})
+   login.addEventListener("click",() => {
+
+        animation2.style.display="flex";
+        login.style.display="none";
+        signup.style.display="none";
+signup2.style.display="block";
+login2.style.display="none";
+        
+        
+
+    })
+    animation2.addEventListener("click",() => {
+
+animation2.style.display="none";
+login.style.display="block";
+signup.style.display="none";
+signup2.style.display="block";
+login2.style.display="none";
+
+})
+login2.addEventListener("click",() => {
+
+    signupdiv.style.display="none";
+    logindiv.style.display="flex";
+    signup.style.display="none";
+    signup2.style.display="block";
+    login.style.display="block";
+    login2.style.display="none";
+
+})
+signup2.addEventListener("click",() => {
+
+    signupdiv.style.display="flex";
+    logindiv.style.display="none";
+    signup.style.display="block";
+    signup2.style.display="none";
+    login.style.display="none";
+    login2.style.display="block";
+
+})
+</script>
 
 </html>

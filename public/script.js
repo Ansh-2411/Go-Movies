@@ -12,7 +12,7 @@ menu.addEventListener("click", () => {
 })
 signup.addEventListener("click", () => {
 
-    alert("Registering please wait.... click OK")
+    console.log("Registering please wait.... click OK")
 
 
 });
