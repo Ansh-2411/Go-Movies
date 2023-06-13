@@ -242,7 +242,7 @@
         },
         {
             "imageurl": [
-                "https://m.media-amazon.com/images/M/MV5BYjE2MjIwMmYtM2ZiMy00MzdmLTkyNTYtNmFiNjM5MDJhMGVmXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                "https://m.media-amazon.com/images/M/MV5BYjE2MjIwMmYtM2ZiMy00MzdmLTkyNTYtNmFiNjM5MDJhMGVmXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg"
             ],
             "genre": [
                 "Action",
@@ -257,17 +257,17 @@
             "synopsis": "A reformed hunter living in isolation on a wildlife sanctuary becomes involved in a deadly game of cat and mouse when he and the local Sheriff set out to track a vicious killer who may have kidnapped his daughter years ago."
         },
         {
-            "imageurl": [],
+            "imageurl": ["https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg"],
             "genre": [
                 "Action",
                 "Adventure",
                 "Drama"
             ],
             "imdbid": "tt6878306",
-            "title": "News of the World",
+            "title": "avatar",
             "imdbrating": 6.8,
             "released": 2020,
-            "type": "https://www.imdb.com/title/tt6878306/",
+            "type": "https://www.imdb.com/title/tt0499549/",
             "synopsis": "A Texan traveling across the wild West bringing the news of the world to local townspeople, agrees to help rescue a young girl who was kidnapped."
         },
         {
@@ -534,15 +534,15 @@
             "synopsis": ""
         },
         {
-            "imageurl": [],
+            "imageurl": ["https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg"],
             "genre": [
                 "Action"
             ],
             "imdbid": "tt11958194",
-            "title": "Liverpool vs Atletico Madrid",
+            "title": "avatar",
             "imdbrating": 6.8,
             "released": 2020,
-            "type": "https://www.imdb.com/title/tt11461320/",
+            "type": "https://www.imdb.com/title/tt1630029/",
             "synopsis": ""
         },
         {
